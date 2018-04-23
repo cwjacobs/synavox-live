@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="./content/hover.css" rel="stylesheet" />
+    <link href="./content/themes/Darkly/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <script defer src="../scripts/firebase-debug.js"></script> -->
+    
+    <!-- Hack required to keep from getting errors in compiled js code -->
+    <script> var exports = {}; </script>
+    <script src="./js/bundle.js"></script>
+    <!-- <script src="./node_modules/systemjs/dist/system.js"></script>
+    <script>
+        System.config({
+            meta: {
+                format: 'cjs'
+            },
+            packages: {
+                '.': {
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('./js/app.js');
+    </script> -->
+
+    <title>Synavox Live</title>
+    <link rel="icon" href="./resources/graphics/IQ-opaque.bmp" />
+</head>
+
+<body>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <!-- Debug aid, screen size banner -->
+    <div class="text-dark">
+        <h6 class="d-none d-lg-none d-md-none d-sm-none d-xl-block" style="text-align: center; background-color: dodgerblue; border-radius: 2px">Display Size: XL</h6>
+        <h6 class="d-none d-xl-none d-md-none d-sm-none d-lg-block" style="text-align: center; background-color: yellowgreen; border-radius: 2px">Display Size: LG</h6>
+        <h6 class="d-none d-xl-none d-lg-none d-sm-none d-md-block" style="text-align: center; background-color: blueviolet; border-radius: 2px">Display Size: MD</h6>
+        <h6 class="d-none d-xl-none d-lg-none d-md-none d-sm-block" style="text-align: center; background-color: mediumvioletred; border-radius: 2px">Display Size: SM</h6>
+        <h6 class="d-xl-none d-lg-none d-md-none d-sm-none" style="text-align: center; background-color: chartreuse; border-radius: 2px">Display Size: XS</h6>
+    </div>
+
+    <div class="container-fluid" style="border: solid; border-color: black; border-width: thin; padding: 15px; padding-top: 5px">
+        <!-- Jumbotron banner with nobleIQ logo -->
+        <div class="jumbotron" style="margin-bottom: 0px; background-color: none; text-align: left; border-radius: 16px; border-style: solid; border-width: thin; padding: 10px">
+            <div class="row">
+                <div class="col-sm-1">
+                    <img src="./resources/graphics/IQ-opaque.bmp" class="img-fluid" height="92" width="92" />
+                </div>
+                <div class="col-sm-11" style="padding-left: 0px">
+                    <h2 style="text-align: left">nobleIQ</h2>
+                    <p>Audio Assisted Adherence</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- right and Left Work Areas -->
+        <div class="row" style="padding: inherit">
+
+            <!-- Left container -->
+            <div class="container col-sm-2 border-primary" style="border-radius: 8px; border-style: solid; border-right: outset; border-width: thin">
+
+                <!-- Catagory Heading -->
+                <!--<h3 style="margin-top: 2px">Medicine Catagory</h3>-->
+                <!--<h4 class="text-center text-warning" style="background-color: none; color: none; margin-top: 10px; margin-bottom: 20px; padding: 5px; border-style: solid; border-radius: 8px; border-width: thin">Medicine Catagory</h4>-->
+                <div class="jumbotron" style="margin-top: 10px; margin-bottom: 20px; background-color: none; border-radius: 8px; border-style: solid; border-width: thin; padding: 0px">
+                    <h5 style="text-align: center">Medicine Catagory</h5>
+                </div>
+
+                <!-- Dashboard accordion -->
+                <div class="panel-group" id="collapse" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="collapse-heading-one">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#collapse" href="#collapse-one" aria-expanded="true" aria-controls="collapse-one">
+                                    Cholesterol
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse-one" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapse-heading-one">
+                            <div class="panel-body text-left" style="margin-left: 20px">
+                                <a href="#">
+                                    <h5 class="text-secondary" id="atorvastatin">Atorvastatin</h5>
+                                </a>
+                                <a href="#">
+                                    <h5 class="text-secondary" id="rosuvastatin">Rosuvastatin</h5>
+                                </a>
+                                <a href="#">
+                                    <h5 class="text-secondary" id="crestor">Crestor</h5>
+                                </a>
+                                <a href="#">
+                                    <h5 class="text-secondary" id="lipitor">Lipitor</h5>
+                                </a>
+                                <!--<a href="../resources/audio/Atorvastatin.mp3"><h5 class="text-secondary">Lipitor</h5></a>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="collapse-heading-two">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#collapse" href="#collapse-two" aria-expanded="false"
+                                    aria-controls="collapse-two">
+                                    Hypertension
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse-two" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapse-heading-two">
+                            <div class="panel-body text-left" style="margin-left: 20px">
+                                <h5>Lisinopril</h5>
+                                <h5>Amlodipine</h5>
+                                <h5>Benicar</h5>
+                                <h5>Losartan</h5>
+                                <h5>Carvedilol</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="collapse-heading-three">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#collapse" href="#collapse-three" aria-expanded="false"
+                                    aria-controls="collapse-three">
+                                    Diabetes (Type 1)
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse-three" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapse-heading-three">
+                            <div class="panel-body text-left" style="margin-left: 20px">
+                                <h5>Apidra</h5>
+                                <h5>Lantus</h5>
+                                <h5>Humalog</h5>
+                                <h5>Novolog</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="collapse-heading-three">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#collapse" href="#collapse-four" aria-expanded="false"
+                                    aria-controls="collapse-three">
+                                    Diabetes (Type 2)
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse-four" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapse-heading-three">
+                            <div class="panel-body text-left" style="margin-left: 20px">
+                                <h5>Victoza</h5>
+                                <h5>Januvia</h5>
+                                <h5>Metformin</h5>
+                                <h5>Glucophage</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right container -->
+            <div class="container col-sm-10 border-primary" id="workarea" style="border-radius: 8px; border-style: solid; border-left: none; border-width: thin">
+                <div class="row" style="padding: 10px; vertical-align: central">
+                    <div class="col-md-12">
+                        <!-- Language Selectors -->
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-primary" id="SelectEnglish">English</button>
+                            <button type="button" class="btn btn-warning" id="SelectSpanish">Spanish</button>
+                            <button type="button" class="btn btn-danger" id="SelectMandarin">Mandarin</button>
+                        </div>
+                    </div>
+
+                    <!-- Blank Row -->
+                    <div class="col-md-12">
+                        <br />
+                    </div>
+
+                    <!-- Audio Pipeline -->
+                    <div class="card col-md-2">
+                        <div class="card-header bg-success text-white selected-medicine-name hidden" style="text-align:center">Medicine Name</div>
+                        <div class="card-body text-white selected-medicine-info" style="text-align:center" id="SelectedMedicineInfo">Information</div>
+                        <div class="card-footer text-white selected-medicine-language hidden" style="text-align:center; padding:1px; margin:5px">Language</div>
+                    </div>
+                    <div class="card col-md-2">
+                        <div class="card-header bg-success text-white selected-medicine-name hidden" style="text-align:center">Medicine Name</div>
+                        <div class="card-body text-white selected-medicine-dose" style="text-align:center" id="SelectedMedicineDose">Dose</div>
+                        <div class="card-footer text-white selected-medicine-language hidden" style="text-align:center; padding:1px; margin:5px">Language</div>
+                    </div>
+
+                    <!-- Blank Row -->
+                    <div class="col-md-12">
+                        <br />
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="col-md-2">
+                        <div class="btn btn-outline-info hvr-shutter-out-horizontal">Preview</div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="btn btn-primary hvr-shutter-out-horizontal" id="download">Download</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
