@@ -59,7 +59,4 @@ $(document).ready(function () {
     });
 
 });
-function newFunction(medicineCategory: MedicineCategory) {
-    console.log(medicineCategory.name);
-}
 
