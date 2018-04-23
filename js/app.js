@@ -2,14 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var medicine_1 = require("./medicine");
 var medicineCategory_1 = require("./medicineCategory");
+var language_1 = require("./language");
 $(document).ready(function () {
     var medicineCategory = new medicineCategory_1.MedicineCategory('Cholesterol');
-    console.log(medicineCategory.name);
-    console.log('\n');
     var atorvastatin = new medicine_1.Medicine('Atorvastatin');
     var rosuvastatin = new medicine_1.Medicine('Rosuvastatin');
     var crestor = new medicine_1.Medicine('Crestor');
     var lipitor = new medicine_1.Medicine('Lipitor');
+    var english = new language_1.Language('English', 'bg-primary');
+    var spanish = new language_1.Language('Spanish', 'bg-warning');
+    var mandarin = new language_1.Language('Mandarin', 'bg-danger');
     $('#atorvastatin').click(function (e) {
         atorvastatin.select(e);
     });
@@ -23,21 +25,18 @@ $(document).ready(function () {
         lipitor.select(e);
     });
     $('#SelectEnglish').click(function (e) {
-        e.preventDefault();
-        $('.selected-medicine-language').removeClass('bg-warning').removeClass('bg-danger').addClass('bg-primary').text('English').show();
-        $('#download').removeClass('bg-warning').removeClass('bg-danger').addClass('bg-primary').show();
+        english.select(e);
     });
     $('#SelectSpanish').click(function (e) {
-        e.preventDefault();
-        $('.selected-medicine-language').removeClass('bg-primary').removeClass('bg-danger').addClass('bg-warning').text('Spanish').show();
-        $('#download').removeClass('bg-primary').removeClass('bg-danger').addClass('bg-warning').show();
+        spanish.select(e);
     });
     $('#SelectMandarin').click(function (e) {
-        e.preventDefault();
-        $('.selected-medicine-language').removeClass('bg-primary').removeClass('bg-warning').addClass('bg-danger').text('Mandarin').show();
-        $('#download').removeClass('bg-primary').removeClass('bg-warning').addClass('bg-danger').show();
+        mandarin.select(e);
     });
     $('#x').click(function (e) {
     });
 });
+function newFunction(medicineCategory) {
+    console.log(medicineCategory.name);
+}
 //# sourceMappingURL=app.js.map

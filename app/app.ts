@@ -1,5 +1,6 @@
 ﻿import { Medicine } from "./medicine";
 import { MedicineCategory } from "./medicineCategory";
+import { Language } from "./language";
 
 //// <reference path ="./medicineCategory.ts"/>
 /// <reference path ="../node_modules/@types/jquery/index.d.ts"/>
@@ -7,11 +8,15 @@ import { MedicineCategory } from "./medicineCategory";
 $(document).ready(function () {
 
     let medicineCategory: MedicineCategory = new MedicineCategory('Cholesterol');
-    
+
     let atorvastatin: Medicine = new Medicine('Atorvastatin');
     let rosuvastatin: Medicine = new Medicine('Rosuvastatin');
     let crestor: Medicine = new Medicine('Crestor');
     let lipitor: Medicine = new Medicine('Lipitor');
+
+    let english: Language = new Language('English', 'bg-primary');
+    let spanish: Language = new Language('Spanish', 'bg-warning');
+    let mandarin: Language = new Language('Mandarin', 'bg-danger');
 
     $('#atorvastatin').click(function (e) {
         atorvastatin.select(e);
@@ -30,24 +35,15 @@ $(document).ready(function () {
     });
 
     $('#SelectEnglish').click(function (e) {
-        e.preventDefault();
-
-        $('.selected-medicine-language').removeClass('bg-warning').removeClass('bg-danger').addClass('bg-primary').text('English').show();
-        $('#download').removeClass('bg-warning').removeClass('bg-danger').addClass('bg-primary').show();
+        english.select(e);
     });
 
     $('#SelectSpanish').click(function (e) {
-        e.preventDefault();
-
-        $('.selected-medicine-language').removeClass('bg-primary').removeClass('bg-danger').addClass('bg-warning').text('Spanish').show();
-        $('#download').removeClass('bg-primary').removeClass('bg-danger').addClass('bg-warning').show();
+        spanish.select(e);
     });
 
     $('#SelectMandarin').click(function (e) {
-        e.preventDefault();
-
-        $('.selected-medicine-language').removeClass('bg-primary').removeClass('bg-warning').addClass('bg-danger').text('Mandarin').show();
-        $('#download').removeClass('bg-primary').removeClass('bg-warning').addClass('bg-danger').show();
+        mandarin.select(e);
     });
 
     $('#x').click(function (e) {

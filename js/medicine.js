@@ -3,11 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Medicine = (function () {
     function Medicine(name) {
         this.name = name;
-        console.log(this.name);
     }
     Medicine.prototype.select = function (e) {
-        var self = this;
         e.preventDefault();
+        var self = this;
         $('.selected-medicine-name').fadeOut(500)
             .promise()
             .progress(function (data) {
@@ -16,7 +15,6 @@ var Medicine = (function () {
         $('.selected-medicine-name').fadeOut(500)
             .promise()
             .done(function (data) {
-            console.log(self.name);
             $('.selected-medicine-name').text(self.name);
             $('.selected-medicine-name').fadeIn(500);
         })
