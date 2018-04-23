@@ -1,5 +1,6 @@
 ﻿import { Medicine } from "./medicine";
 import { MedicineCategory } from "./medicineCategory";
+
 //// <reference path ="./medicineCategory.ts"/>
 /// <reference path ="../node_modules/@types/jquery/index.d.ts"/>
 
