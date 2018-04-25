@@ -8,7 +8,7 @@ import { MedicinePanelController } from "./controllers/medicinePanelController"
 
 $(document).ready(function () {
 
-    let controller: MedicinePanelController = new MedicinePanelController();
+    let MedicineController: MedicinePanelController = new MedicinePanelController();
 
     let testData: TestData = new TestData();
     let json: string = testData.getJsonData();
@@ -23,7 +23,7 @@ $(document).ready(function () {
     let mandarin: Language = new Language('Mandarin', 'bg-danger');
 
     $('.medicine-selector').click(function (e) {
-        controller.select(e);
+        MedicineController.select(e);
     });
 
     $('#SelectEnglish').click(function (e) {

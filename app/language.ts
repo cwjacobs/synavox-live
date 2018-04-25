@@ -8,6 +8,6 @@ export class Language {
 
         $('.selected-medicine-language').removeClass('bg-primary').removeClass('bg-warning').removeClass('bg-danger').addClass(self.cssClass).text(self.name).show();
         
-        $('#download').removeClass('bg-primary').removeClass('bg-warning').removeClass('bg-danger').addClass(self.cssClass).text(self.name).show();
+        $('#download').removeClass('bg-primary').removeClass('bg-warning').removeClass('bg-danger').addClass(self.cssClass).show();
     }
 }
