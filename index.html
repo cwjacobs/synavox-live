@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <link href="./content/hover.css" rel="stylesheet" />
-    <link href="./content/themes/Darkly/bootstrap.min.css" rel="stylesheet" />
+    <link href="./content/themes/pulse/bootstrap.min.css" rel="stylesheet" />
 
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -13,21 +13,9 @@
     
     <!-- Hack required to keep from getting errors in compiled js code -->
     <script> var exports = {}; </script>
+
     <script src="./js/bundle.js"></script>
-    <!-- <script src="./node_modules/systemjs/dist/system.js"></script>
-    <script>
-        System.config({
-            meta: {
-                format: 'cjs'
-            },
-            packages: {
-                '.': {
-                    defaultExtension: 'js'
-                }
-            }
-        });
-        System.import('./js/app.js');
-    </script> -->
+    <link href="./app/nobleiq.css" rel="stylesheet" />
 
     <title>Synavox Live</title>
     <link rel="icon" href="./resources/graphics/IQ-opaque.bmp" />
@@ -99,13 +87,13 @@
 
                     <!-- Audio Pipeline -->
                     <div class="card col-md-2">
-                        <div class="card-header bg-success text-white selected-medicine-name hidden" style="text-align:center">Medicine Name</div>
-                        <div class="card-body text-white selected-medicine-info" style="text-align:center" id="SelectedMedicineInfo">Information</div>
+                        <div class="card-header text-white bg-success selected-medicine-name hidden" style="text-align:center">Medicine Name</div>
+                        <div class="card-body selected-medicine-info" style="text-align:center" id="SelectedMedicineInfo">Information</div>
                         <div class="card-footer text-white selected-medicine-language hidden" style="text-align:center; padding:1px; margin:5px">Language</div>
                     </div>
                     <div class="card col-md-2">
                         <div class="card-header bg-success text-white selected-medicine-name hidden" style="text-align:center">Medicine Name</div>
-                        <div class="card-body text-white selected-medicine-dose" style="text-align:center" id="SelectedMedicineDose">Dose</div>
+                        <div class="card-body selected-medicine-dose" style="text-align:center" id="SelectedMedicineDose">Dose</div>
                         <div class="card-footer text-white selected-medicine-language hidden" style="text-align:center; padding:1px; margin:5px">Language</div>
                     </div>
 

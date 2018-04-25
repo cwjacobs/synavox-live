@@ -26,7 +26,6 @@ export class MedicinePanelController {
             .promise()
 
             .done(function (data) {
-                console.log(e);
                 $('.selected-medicine-name').text(self.medicineName);
                 $('.selected-medicine-name').fadeIn(500);
             })

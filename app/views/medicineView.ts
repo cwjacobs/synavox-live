@@ -18,7 +18,7 @@ export class MedicineView {
         let element = document.createElement('h5');
         {
             let elementId: string = this.title;
-            let elementClass: string = 'text-secondary medicine-selector';
+            let elementClass: string = 'medicine-selector text-success';
 
             element.id = elementId;
             element.className = elementClass;
