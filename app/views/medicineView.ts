@@ -17,8 +17,8 @@ export class MedicineView {
         // <h5 class="text-secondary" id="atorvastatin">Atorvastatin</h5>
         let element = document.createElement('h5');
         {
-            let elementId: string = this.lowerCaseTitle;
-            let elementClass: string = 'text-secondary';
+            let elementId: string = this.title;
+            let elementClass: string = 'text-secondary medicine-selector';
 
             element.id = elementId;
             element.className = elementClass;

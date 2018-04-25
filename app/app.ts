@@ -1,10 +1,14 @@
 ﻿import { Language } from "./language";
 import { TestData } from "./testData";
 import { MedicinePanelViewFactory } from "./factories/medicinePanelViewFactory"
+import { Medicine } from "./medicine"
+import { MedicinePanelController } from "./controllers/medicinePanelController"
 
 /// <reference path ="../node_modules/@types/jquery/index.d.ts"/>
 
 $(document).ready(function () {
+
+    let controller: MedicinePanelController = new MedicinePanelController();
 
     let testData: TestData = new TestData();
     let json: string = testData.getJsonData();
@@ -18,21 +22,9 @@ $(document).ready(function () {
     let spanish: Language = new Language('Spanish', 'bg-warning');
     let mandarin: Language = new Language('Mandarin', 'bg-danger');
 
-    // $('#atorvastatin').click(function (e) {
-    //     atorvastatin.select(e);
-    // });
-
-    // $('#rosuvastatin').click(function (e) {
-    //     rosuvastatin.select(e);
-    // });
-
-    // $('#crestor').click(function (e) {
-    //     crestor.select(e);
-    // });
-
-    // $('#lipitor').click(function (e) {
-    //     lipitor.select(e);
-    // });
+    $('.medicine-selector').click(function (e) {
+        controller.select(e);
+    });
 
     $('#SelectEnglish').click(function (e) {
         english.select(e);
