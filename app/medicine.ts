@@ -1,12 +1,24 @@
+import { MedicineView } from "./views/medicineView";
+
 export class Medicine {
 
+    private medicineView: MedicineView;
+
     constructor(readonly name: string) {
-        // console.log(this.name);
+        this.medicineView = new MedicineView(name);
     }
+
+    public getMedicineButtonElement(): HTMLElement {
+        return this.medicineView.getMedicineButtonViewElement();
+    }
+
+    // $('#atorvastatin').click(function (e) {
+    //     atorvastatin.select(e);
+    // });
 
     select(e: JQuery.Event): void {
         e.preventDefault();
-        
+
         let self: any = this;
 
         // Using then (not as clear to me)

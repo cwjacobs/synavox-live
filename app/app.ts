@@ -1,38 +1,38 @@
-﻿import { Medicine } from "./medicine";
-import { MedicineCategory } from "./medicineCategory";
-import { Language } from "./language";
+﻿import { Language } from "./language";
+import { TestData } from "./testData";
+import { MedicinePanelViewFactory } from "./factories/medicinePanelViewFactory"
 
-//// <reference path ="./medicineCategory.ts"/>
 /// <reference path ="../node_modules/@types/jquery/index.d.ts"/>
 
 $(document).ready(function () {
 
-    let medicineCategory: MedicineCategory = new MedicineCategory('Cholesterol');
+    let testData: TestData = new TestData();
+    let json: string = testData.getJsonData();
+    let medicinePanelViews: Array<HTMLElement> = new MedicinePanelViewFactory().createMedicinePanelViews(json);
 
-    let atorvastatin: Medicine = new Medicine('Atorvastatin');
-    let rosuvastatin: Medicine = new Medicine('Rosuvastatin');
-    let crestor: Medicine = new Medicine('Crestor');
-    let lipitor: Medicine = new Medicine('Lipitor');
+    medicinePanelViews.forEach(view => {
+        $('#medicine-panel').append(view);
+    })
 
     let english: Language = new Language('English', 'bg-primary');
     let spanish: Language = new Language('Spanish', 'bg-warning');
     let mandarin: Language = new Language('Mandarin', 'bg-danger');
 
-    $('#atorvastatin').click(function (e) {
-        atorvastatin.select(e);
-    });
+    // $('#atorvastatin').click(function (e) {
+    //     atorvastatin.select(e);
+    // });
 
-    $('#rosuvastatin').click(function (e) {
-        rosuvastatin.select(e);
-    });
+    // $('#rosuvastatin').click(function (e) {
+    //     rosuvastatin.select(e);
+    // });
 
-    $('#crestor').click(function (e) {
-        crestor.select(e);
-    });
+    // $('#crestor').click(function (e) {
+    //     crestor.select(e);
+    // });
 
-    $('#lipitor').click(function (e) {
-        lipitor.select(e);
-    });
+    // $('#lipitor').click(function (e) {
+    //     lipitor.select(e);
+    // });
 
     $('#SelectEnglish').click(function (e) {
         english.select(e);
