@@ -53,10 +53,14 @@ export class MedicineCategoryView {
     }
 
     private createTitleButtonElement(): HTMLElement {
-        // <a role="button" data-toggle="collapse" data-parent="#collapse" href="#collapse-[category name]" aria-expanded="true" aria-controls="collapse-[category name]">
+        // <a class="medicine-catagory" role="button" data-toggle="collapse" data-parent="#collapse" href="#collapse-[category name]" aria-expanded="true" aria-controls="collapse-[category name]">
         //    Cholesterol
         // </a>
         let element: HTMLElement = document.createElement('a');
+    
+        let elementClass: string = 'synavox';
+        element.className = elementClass;
+        element.id = this.lowerCaseCategoryName;
 
         element.setAttribute('roll', 'button');
         element.setAttribute('data-toggle', 'collapse');

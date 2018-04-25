@@ -3,7 +3,19 @@ export class MedicinePanelController {
 
     medicineName: string;
 
-    select(e: JQuery.Event): void {
+    selectCategory(e: JQuery.Event): void {
+        e.preventDefault();
+
+        let targetElement: Element | undefined = e.toElement;
+        if (targetElement) {
+            let medicineCategory: string | null = targetElement.textContent;
+            if (medicineCategory) {
+                $('#selected-medicine-info').text(medicineCategory);
+            }
+        }
+    };
+
+    selectMedicine(e: JQuery.Event): void {
         e.preventDefault();
 
         let targetElement: Element | undefined = e.toElement;
