@@ -8,10 +8,8 @@ export class MedicinePanelController {
 
         let targetElement: Element | undefined = e.toElement;
         if (targetElement) {
-            let medicineCategory: string | null = targetElement.textContent;
-            if (medicineCategory) {
-                $('#selected-medicine-info').text(medicineCategory);
-            }
+            let medicineCategory: string | null = (targetElement.textContent !== null) ? targetElement.textContent : "null";
+            $('#selected-medicine-info').text(medicineCategory);
         }
     };
 
@@ -40,6 +38,7 @@ export class MedicinePanelController {
             .done(function (data) {
                 $('.selected-medicine-name').text(self.medicineName);
                 $('.selected-medicine-name').fadeIn(500);
+                console.log(`The medicine category: ${self.medicineName}`);
             })
 
             .fail(function (data) {
