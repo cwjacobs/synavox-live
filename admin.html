@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -23,6 +24,9 @@
   <link rel="stylesheet" href="app/nobleiq.css">
   <link rel="stylesheet" href="content/hover.css" />
 
+  <title>Synavox Live</title>
+  <link rel="icon" href="./resources/graphics/IQ-opaque.bmp" />
+
   <!-- firebase related files -->
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
@@ -39,15 +43,17 @@
     };
     firebase.initializeApp(config);
   </script>
-  
-    <!-- Hack required to keep from getting errors in compiled js code -->
-    <script> var exports = {}; </script>
 
-    <!-- nobleIQ application js script bundle -->
-    <script src="js/bundle.js"></script>
-    <link href="app/nobleiq.css" rel="stylesheet" />
+  <!-- Hack required to keep from getting errors in compiled js code -->
+  <script> var exports = {}; </script>
 
-  <!-- initialize script -->
+  <!-- nobleIQ application js script bundle -->
+  <script src="js/bundle.js"></script>
+  <link href="app/nobleiq.css" rel="stylesheet" />
+
+  <!-- Firebase initialize script -->
+  <!-- <script src="app/database/initialize.js"></script> -->
+
   <!-- <script src="data.js"></script> -->
   <!-- <script src="initialize.js"></script> -->
   <!-- filtering scripts -->

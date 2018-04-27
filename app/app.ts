@@ -3,10 +3,14 @@ import { Local_TestData } from "./database/local_TestData";
 import { MedicinePanelViewFactory } from "./factories/medicinePanelViewFactory"
 import { Medicine } from "./medicine"
 import { MedicinePanelController } from "./controllers/medicinePanelController"
+import { Firestore_niq } from "./database/firestore_db"
 
 /// <reference path ="../node_modules/@types/jquery/index.d.ts"/>
 
 $(document).ready(function () {
+
+    let firestore_niq = new Firestore_niq();
+    firestore_niq.initialize();
 
     let medicinePanelController: MedicinePanelController = new MedicinePanelController();
 
@@ -39,17 +43,17 @@ $(document).ready(function () {
         mandarin.select(e);
     });
 
-    $('#selected-medicine-info').click(function (e) {
-           e.preventDefault();
+    // $('#selected-medicine-info').click(function (e) {
+    //        e.preventDefault();
 
-           let audio: any = [];
-           audio["walk"] = new Audio();
-           audio["walk"].src = "C:/Users/cjaco/source/repos/Synavox/Synavox Live/resources/audio/Atorvastatin.mp3";
-           audio["walk"].addEventListener('load', function () {
-               audio["walk"].load();
-               audio["walk"].play();
-           });
-    });
+    //        let audio: any = [];
+    //        audio["walk"] = new Audio();
+    //        audio["walk"].src = "C:/Users/cjaco/source/repos/Synavox/Synavox Live/resources/audio/Atorvastatin.mp3";
+    //        audio["walk"].addEventListener('load', function () {
+    //            audio["walk"].load();
+    //            audio["walk"].play();
+    //        });
+    // });
 
 });
 
