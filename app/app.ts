@@ -1,5 +1,5 @@
 ﻿import { Language } from "./language";
-import { TestData } from "./testData";
+import { Local_TestData } from "./database/local_TestData";
 import { MedicinePanelViewFactory } from "./factories/medicinePanelViewFactory"
 import { Medicine } from "./medicine"
 import { MedicinePanelController } from "./controllers/medicinePanelController"
@@ -10,8 +10,9 @@ $(document).ready(function () {
 
     let medicinePanelController: MedicinePanelController = new MedicinePanelController();
 
-    let testData: TestData = new TestData();
+    let testData: Local_TestData = new Local_TestData();
     let json: string = testData.getJsonData();
+    
     let medicinePanelViews: Array<HTMLElement> = new MedicinePanelViewFactory().createMedicinePanelViews(json);
 
     medicinePanelViews.forEach(view => {

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server -a localhost -p 7000 -o",
+    "serve": "http-server -a localhost -p 7000 -o",
     "compile": "tsc",
     "browserify": "browserify ./app/app.ts -p [ tsify --noImplicitAny ] > ./js/bundle.js --debug ",
     "build": "npm run compile && npm run browserify"

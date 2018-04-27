@@ -9,16 +9,33 @@
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- <script defer src="../scripts/firebase-debug.js"></script> -->
+    <title>Synavox Live</title>
+    <link rel="icon" href="./resources/graphics/IQ-opaque.bmp" />
+
+    <!-- firebase related files -->
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDWoBUhqcPPNNsHGPM1x5eI6gRRYTXNWPM",
+            authDomain: "synavox-live.firebaseapp.com",
+            databaseURL: "https://synavox-live.firebaseio.com",
+            projectId: "synavox-live",
+            storageBucket: "synavox-live.appspot.com",
+            messagingSenderId: "341085923340"
+        };
+        firebase.initializeApp(config);
+    </script>
 
     <!-- Hack required to keep from getting errors in compiled js code -->
     <script> var exports = {}; </script>
 
-    <script src="./js/bundle.js"></script>
-    <link href="./app/nobleiq.css" rel="stylesheet" />
+    <!-- nobleIQ application js script bundle -->
+    <script src="js/bundle.js"></script>
+    <link href="app/nobleiq.css" rel="stylesheet" />
 
-    <title>Synavox Live</title>
-    <link rel="icon" href="./resources/graphics/IQ-opaque.bmp" />
 </head>
 
 <body>
@@ -41,24 +58,24 @@
         <!-- Jumbotron banner with nobleIQ logo -->
         <div class="jumbotron" style="margin-bottom: 0px; background-color: none; text-align: left; border-radius: 16px; border-style: solid; border-width: thin; padding: 10px">
             <div class="row">
-              <div class="col-sm-1">
-                <img src="./resources/graphics/IQ-opaque.bmp" class="img-fluid" height="92" width="92" />
-              </div>
-              <div class="col-sm-3" style="padding-left: 0px">
-                <h2 style="text-align: left">nobleIQ</h2>
-                <p>Audio Assisted Adherence</p>
-              </div>
-              <div class="col-sm-7" style="padding-left: 0px">
-                <h2 style="text-align: left">Pharmacist Dashboard</h2>
-              </div>
-              <div class="col-sm-1" style="padding-left: 0px; padding: 20px">
-                <div class="btn btn-outline-info hvr-shutter-out-horizontal">
-                  <a href="admin.html">Admin</a>
+                <div class="col-sm-1">
+                    <img src="./resources/graphics/IQ-opaque.bmp" class="img-fluid" height="92" width="92" />
                 </div>
-              </div>
+                <div class="col-sm-3" style="padding-left: 0px">
+                    <h2 style="text-align: left">nobleIQ</h2>
+                    <p>Audio Assisted Adherence</p>
+                </div>
+                <div class="col-sm-7" style="padding-left: 0px">
+                    <h2 style="text-align: left">Pharmacist Dashboard</h2>
+                </div>
+                <div class="col-sm-1" style="padding-left: 0px; padding: 20px">
+                    <div class="btn btn-outline-info hvr-shutter-out-horizontal">
+                        <a href="admin.html">Admin</a>
+                    </div>
+                </div>
             </div>
-          </div>      
-        
+        </div>
+
         <!-- right and Left Work Areas -->
         <div class="row" style="padding: inherit">
 

@@ -1,6 +1,6 @@
-import { MedicineDataModel } from "./models/medicineDataModel"
+import { MedicineDataModel } from "../models/medicineDataModel"
 
-export class TestData {
+export class Local_TestData {
 
     private static medicines: MedicineDataModel[] = [
         new MedicineDataModel("Cholesterol", ["Atorvastatin", "Rosuvastatin", "Lipitor", "Crestor"]),
@@ -8,11 +8,12 @@ export class TestData {
         new MedicineDataModel("Diabetes-Type1", ["Apidra", "Lantus", "Humalog", "Novalog"]),
         new MedicineDataModel("Diabetes-Type2", ["Victoza", "Januvia", "Metformin", "Glucophage"]),
         new MedicineDataModel("Anticoagulants", ["Warfarin", "Acenocoumarol ", "Phenprocoumon", "Dabigatran", "Apixaban"]),
+        new MedicineDataModel("nobleIQ", ["Craig Jacobs", "Lynn Jacobs", "Kurt Jacobs", "John Holderman", "Tyler Jacobs", "Katia Garcia"]),
     ];
 
     getJsonData(): string {
 
-        let json = JSON.stringify(TestData.medicines);
+        let json = JSON.stringify(Local_TestData.medicines);
 
         return json;
     };

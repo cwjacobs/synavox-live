@@ -1,6 +1,5 @@
 # npm modules
 js/
-node_modules/
-firestore/
 archive/
+node_modules/
 

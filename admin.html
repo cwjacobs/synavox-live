@@ -20,34 +20,40 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- custom styles -->
-  <link rel="stylesheet" href="nobleiq.css">
-  <link rel="stylesheet" href="./content/hover.css" />
+  <link rel="stylesheet" href="app/nobleiq.css">
+  <link rel="stylesheet" href="content/hover.css" />
 
   <!-- firebase related files -->
-  <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
-
   <script>
     // Initialize Firebase
     var config = {
-      apiKey: "AIzaSyDlJIp_g3EtWuV4aUPp4p07e3OAzWK1iB0",
-      authDomain: "employees-367de.firebaseapp.com",
-      databaseURL: "https://employees-367de.firebaseio.com",
-      projectId: "employees-367de",
-      storageBucket: "employees-367de.appspot.com",
-      messagingSenderId: "982140420614"
+      apiKey: "AIzaSyDWoBUhqcPPNNsHGPM1x5eI6gRRYTXNWPM",
+      authDomain: "synavox-live.firebaseapp.com",
+      databaseURL: "https://synavox-live.firebaseio.com",
+      projectId: "synavox-live",
+      storageBucket: "synavox-live.appspot.com",
+      messagingSenderId: "341085923340"
     };
     firebase.initializeApp(config);
   </script>
+  
+    <!-- Hack required to keep from getting errors in compiled js code -->
+    <script> var exports = {}; </script>
+
+    <!-- nobleIQ application js script bundle -->
+    <script src="js/bundle.js"></script>
+    <link href="app/nobleiq.css" rel="stylesheet" />
 
   <!-- initialize script -->
-  <script src="data.js"></script>
-  <script src="initialize.js"></script>
+  <!-- <script src="data.js"></script> -->
+  <!-- <script src="initialize.js"></script> -->
   <!-- filtering scripts -->
-  <script src="filter.js"></script>
+  <!-- <script src="filter.js"></script> -->
   <!-- custom script -->
-  <script src="script.js"></script>
+  <!-- <script src="script.js"></script> -->
 
 </head>
 
