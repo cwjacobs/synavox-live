@@ -7,7 +7,7 @@ export class MedicinePanelViewFactory {
     constructor() {
     }
 
-    public createMedicinePanelViews(json: string): HTMLElement[] {
+    public createMedicinePanelViews_Json(json: string): HTMLElement[] {
 
         let views: HTMLElement[] = new Array<HTMLElement>();
 
@@ -23,5 +23,36 @@ export class MedicinePanelViewFactory {
         });
 
         return views;
+    }
+
+    public createMedicinePanelViews_Model(medicineArray: Array<MedicineDataModel>): HTMLElement[] {
+
+        let views: HTMLElement[] = new Array<HTMLElement>();
+
+        medicineArray.forEach(e => {
+            let category: MedicineCategory = new MedicineCategory(e.category);
+            e.medicineList.forEach(medicineName => {
+                let medicine: Medicine = new Medicine(medicineName);
+                category.addMedicineToCategory(medicine);
+            });
+            views.push(category.getCategoryContainerElement());
+        });
+
+        return views;
+    }
+
+    public createMedicinePanelView_Model(medicine: MedicineDataModel): HTMLElement {
+
+        let view: HTMLElement;
+
+        let category: MedicineCategory = new MedicineCategory(medicine.category);
+        medicine.medicineList.forEach(medicineName => {
+            let medicine: Medicine = new Medicine(medicineName);
+            category.addMedicineToCategory(medicine);
+        });
+
+        view = category.getCategoryContainerElement();
+
+        return view;
     }
 };
