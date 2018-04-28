@@ -2,7 +2,7 @@ import { MedicineDataModel } from "../models/medicineDataModel"
 
 export class Local_TestData {
 
-    private static medicines: MedicineDataModel[] = [
+    private static testCollection: MedicineDataModel[] = [
         new MedicineDataModel("Cholesterol", ["Atorvastatin", "Rosuvastatin", "Lipitor", "Crestor"]),
         new MedicineDataModel("Hypertension", ["Lisinopril", "Amlodipine", "Benicar", "Losartan", "Carvedilol"]),
         new MedicineDataModel("Diabetes-Type1", ["Apidra", "Lantus", "Humalog", "Novalog"]),
@@ -11,10 +11,12 @@ export class Local_TestData {
         new MedicineDataModel("nobleIQ", ["Craig Jacobs", "Lynn Jacobs", "Kurt Jacobs", "John Holderman", "Tyler Jacobs", "Katia Garcia"]),
     ];
 
+    getTestCollection(): Array<MedicineDataModel> {
+        return Local_TestData.testCollection;
+    }
+
     getJsonData(): string {
-
-        let json = JSON.stringify(Local_TestData.medicines);
-
+        let json = JSON.stringify(Local_TestData.testCollection);
         return json;
     };
 };
