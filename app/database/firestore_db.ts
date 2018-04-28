@@ -3,7 +3,7 @@ import 'firebase/firestore';
 
 export class Firestore_db {
 
-    app: firebase.app.App;
+    mainApp: firebase.app.App;
 
     initialize(): void {
 
@@ -18,24 +18,43 @@ export class Firestore_db {
             messagingSenderId: "341085923340"
         };
 
-        this.app = firebase.initializeApp(firebaseConfig, "synavox-live");
+        this.mainApp = firebase.initializeApp(firebaseConfig, "synavox-live");
 
-        const firestore = firebase.firestore(this.app);
+        const firestore = firebase.firestore(this.mainApp);
         firestore.settings(settings);
 
-        var employeesRef = firestore.collection("employees");
+        var medicineCategoriesRef = firestore.collection("medicineCategories");
 
-        console.log(`Firebase app name: ${this.app.name}`);
+        console.log(`Firebase app name: ${this.mainApp.name}`);
 
-        employeesRef.doc("A.Einstein").set({
-            fName: "Albert",
-            lName: "Einstein",
-            email: "aeinstein@yale.edu",
-            age: 39,
-            gender: "Male",
-            yearsOfExperience: 10,
-            isFullTime: true,
-        });
+        const setOptions = {
+            merge: true
+        };
+
+        medicineCategoriesRef.doc("Cholesterol").set({
+            category: "Cholesterol",
+            medicines: ["Atorvastatin", "Rosuvastatin", "Lipitor", "Crestor"],
+        }, setOptions);
+
+        medicineCategoriesRef.doc("Hypertension").set({
+            category: "Hypertension",
+            medicines: ["Lisinopril", "Amlodipine", "Benicar", "Losartan", "Carvedilol"],
+        }, setOptions);
+
+        medicineCategoriesRef.doc("Diabetes-Type1").set({
+            category: "Diabetes-Type1",
+            medicines: ["Apidra", "Lantus", "Humalog", "Novalog"],
+        }, setOptions);
+
+        medicineCategoriesRef.doc("Diabetes-Type2").set({
+            category: "Diabetes-Type2",
+            medicines: ["Victoza", "Januvia", "Metformin", "Glucophage"],
+        }, setOptions);
+
+        medicineCategoriesRef.doc("Anticoagulants").set({
+            category: "Anticoagulants",
+            medicines: ["Warfarin", "Acenocoumarol ", "Phenprocoumon", "Dabigatran", "Apixaban"],
+        }, setOptions);
     }
 }
 
