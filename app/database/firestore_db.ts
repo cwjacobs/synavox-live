@@ -1,7 +1,7 @@
 import * as firebase from 'firebase';
 import 'firebase/firestore';
 
-export class Firestore_niq {
+export class Firestore_db {
 
     app: firebase.app.App;
 

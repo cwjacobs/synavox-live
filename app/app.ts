@@ -3,13 +3,13 @@ import { Local_TestData } from "./database/local_TestData";
 import { MedicinePanelViewFactory } from "./factories/medicinePanelViewFactory"
 import { Medicine } from "./medicine"
 import { MedicinePanelController } from "./controllers/medicinePanelController"
-import { Firestore_niq } from "./database/firestore_db"
+import { Firestore_db } from "./database/firestore_db"
 
 /// <reference path ="../node_modules/@types/jquery/index.d.ts"/>
 
 $(document).ready(function () {
 
-    let firestore_niq = new Firestore_niq();
+    let firestore_niq = new Firestore_db();
     firestore_niq.initialize();
 
     let medicinePanelController: MedicinePanelController = new MedicinePanelController();
