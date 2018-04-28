@@ -5,7 +5,7 @@ export class Firestore_db {
 
     mainApp: firebase.app.App;
 
-    initialize(): void {
+    initialize(): firebase.firestore.CollectionReference {
 
         const settings = { timestampsInSnapshots: true };
 
@@ -23,7 +23,7 @@ export class Firestore_db {
         const firestore = firebase.firestore(this.mainApp);
         firestore.settings(settings);
 
-        var medicineCategoriesRef = firestore.collection("medicineCategories");
+        let medicineCategoriesRef: firebase.firestore.CollectionReference = firestore.collection("medicineCategories");
 
         console.log(`Firebase app name: ${this.mainApp.name}`);
 
@@ -55,6 +55,8 @@ export class Firestore_db {
             category: "Anticoagulants",
             medicines: ["Warfarin", "Acenocoumarol ", "Phenprocoumon", "Dabigatran", "Apixaban"],
         }, setOptions);
+
+        return medicineCategoriesRef;
     }
 }
 

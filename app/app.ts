@@ -9,8 +9,14 @@ import { Firestore_db } from "./database/firestore_db"
 
 $(document).ready(function () {
 
-    let firestore_niq = new Firestore_db();
-    firestore_niq.initialize();
+    let firestore_db = new Firestore_db();
+    let medicineCategoriesRef = firestore_db.initialize();
+
+    medicineCategoriesRef.get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            console.log(`Category: ${doc.id}`);
+        })
+    })
 
     let medicinePanelController: MedicinePanelController = new MedicinePanelController();
 
