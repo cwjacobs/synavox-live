@@ -1,6 +1,6 @@
 
 import { Database } from "../database/database"
-import { MedicinePanelViewFactory } from "../factories/medicinePanelViewFactory"
+import { PharmacistPanelViewFactory } from "../factories/pharmacistPanelViewFactory"
 
 interface KeyValuePair {
     [key: string]: string;
@@ -21,7 +21,7 @@ export class PharmcistDashboardController {
 
         let medicineCollection = await this.database.getMedicineCollectionAsync();
 
-        let medicinePanelViews: HTMLElement[] = new MedicinePanelViewFactory().createMedicinePanelViews_Model(medicineCollection);
+        let medicinePanelViews: HTMLElement[] = new PharmacistPanelViewFactory().createPharmacistPanelViews_Model(medicineCollection);
 
         medicinePanelViews.forEach(view => {
             $('#medicine-panel').append(view);

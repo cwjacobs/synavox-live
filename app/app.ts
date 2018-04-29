@@ -4,21 +4,17 @@
 
 $(document).ready(function () {
 
-    let pharmcistDashboardController = new PharmcistDashboardController();
+    let pharmDashboardController = new PharmcistDashboardController();
     
-    pharmcistDashboardController.buildPharmacistDashboardAsync();
+    pharmDashboardController.buildPharmacistDashboardAsync();
 
     $(document).on('click', '.medicine-selector', function (e) {
-        pharmcistDashboardController.selectMedicine(e);
+        pharmDashboardController.selectMedicine(e);
     });
 
     $(document).on('click', '.language-selector', function (e) {
         let language: string | null = e.target.textContent !== null ? e.target.textContent : "null";
-        pharmcistDashboardController.selectLanguage(language);
-    });
-
-    $('#restore-data').click(function (e) {
-        // firestore_db.restoreDefaultData(medicineCategoriesRef);
+        pharmDashboardController.selectLanguage(language);
     });
 });
 

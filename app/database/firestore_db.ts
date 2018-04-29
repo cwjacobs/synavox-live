@@ -27,35 +27,6 @@ export class Firestore_db {
 
         console.log(`Firebase app name: ${this.mainApp.name}`);
 
-        // const setOptions = {
-        //     merge: true
-        // };
-
-        // medicineCategoriesRef.doc("Cholesterol").set({
-        //     category: "Cholesterol",
-        //     medicines: ["Atorvastatin", "Rosuvastatin", "Lipitor", "Crestor"],
-        // }, setOptions);
-
-        // medicineCategoriesRef.doc("Hypertension").set({
-        //     category: "Hypertension",
-        //     medicines: ["Lisinopril", "Amlodipine", "Benicar", "Losartan", "Carvedilol"],
-        // }, setOptions);
-
-        // medicineCategoriesRef.doc("Diabetes-Type1").set({
-        //     category: "Diabetes-Type1",
-        //     medicines: ["Apidra", "Lantus", "Humalog", "Novalog"],
-        // }, setOptions);
-
-        // medicineCategoriesRef.doc("Diabetes-Type2").set({
-        //     category: "Diabetes-Type2",
-        //     medicines: ["Victoza", "Januvia", "Metformin", "Glucophage"],
-        // }, setOptions);
-
-        // medicineCategoriesRef.doc("Anticoagulants").set({
-        //     category: "Anticoagulants",
-        //     medicines: ["Warfarin", "Acenocoumarol ", "Phenprocoumon", "Dabigatran", "Apixaban"],
-        // }, setOptions);
-
         return medicineCategoriesRef;
     }
 
