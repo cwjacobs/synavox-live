@@ -64,7 +64,6 @@ export class PharmcistDashboardController {
             .done(function (data) {
                 $('.selected-medicine-name').text(self.medicineName);
                 $('.selected-medicine-name').fadeIn(500);
-                console.log(`The medicine category: ${self.medicineName}`);
             })
 
             .fail(function (data) {

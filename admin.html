@@ -17,12 +17,15 @@
   <!-- jquery import -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
+
   <!-- font awesome for the icons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!-- custom styles -->
-  <link rel="stylesheet" href="app/nobleiq.css">
+  <!-- Hover styles -->
   <link rel="stylesheet" href="content/hover.css" />
+
+  <!-- custom styles -->
+  <link href="app/styles/nobleiq.css" rel="stylesheet" />
 
   <title>Synavox Live</title>
   <link rel="icon" href="./resources/graphics/IQ-opaque.bmp" />
@@ -33,15 +36,15 @@
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
   <script>
     // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDWoBUhqcPPNNsHGPM1x5eI6gRRYTXNWPM",
-      authDomain: "synavox-live.firebaseapp.com",
-      databaseURL: "https://synavox-live.firebaseio.com",
-      projectId: "synavox-live",
-      storageBucket: "synavox-live.appspot.com",
-      messagingSenderId: "341085923340"
-    };
-    firebase.initializeApp(config);
+    // var config = {
+    //   apiKey: "AIzaSyDWoBUhqcPPNNsHGPM1x5eI6gRRYTXNWPM",
+    //   authDomain: "synavox-live.firebaseapp.com",
+    //   databaseURL: "https://synavox-live.firebaseio.com",
+    //   projectId: "synavox-live",
+    //   storageBucket: "synavox-live.appspot.com",
+    //   messagingSenderId: "341085923340"
+    // };
+    // firebase.initializeApp(config);
   </script>
 
   <!-- Hack required to keep from getting errors in compiled js code -->
@@ -49,7 +52,6 @@
 
   <!-- nobleIQ application js script bundle -->
   <script src="js/bundle.js"></script>
-  <link href="app/styles/nobleiq.css" rel="stylesheet" />
 
   <!-- Firebase initialize script -->
   <!-- <script src="app/database/initialize.js"></script> -->
