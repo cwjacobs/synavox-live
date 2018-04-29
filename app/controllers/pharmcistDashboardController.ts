@@ -2,21 +2,20 @@
 import { Database } from "../database/database"
 import { MedicinePanelViewFactory } from "../factories/medicinePanelViewFactory"
 
+interface KeyValuePair {
+    [key: string]: string;
+}
+
 export class PharmcistDashboardController {
 
+    static cssClassSelector: KeyValuePair = {
+        ["English"]: "bg-primary",
+        ["Spanish"]: "bg-warning",
+        ["Mandarin"]: "bg-danger"
+    };
+
     medicineName: string;
-    database: Database = new Database()
-
-    buildPharmacistDashboard() {
-
-        let medicineCollection = this.database.getMedicineCollection();
-
-        // let medicinePanelViews: HTMLElement[] = new MedicinePanelViewFactory().createMedicinePanelViews_Model(medicineCollection);
-
-        // medicinePanelViews.forEach(view => {
-        //     $('#medicine-panel').append(view);
-        // });
-    }
+    database: Database = new Database();
 
     async buildPharmacistDashboardAsync() {
 
@@ -29,7 +28,7 @@ export class PharmcistDashboardController {
         });
     }
 
-    selectCategory(e: JQuery.Event): void {
+    selectMedicineCategory(e: JQuery.Event): void {
         e.preventDefault();
 
         let targetElement: Element | undefined = e.toElement;
@@ -76,4 +75,12 @@ export class PharmcistDashboardController {
                 alert('progress');
             });
     };
-}
+
+    selectLanguage(language: string): void {
+        let cssClass: string = PharmcistDashboardController.cssClassSelector[language];
+
+        $('.selected-medicine-language').removeClass('bg-primary').removeClass('bg-warning').removeClass('bg-danger').addClass(cssClass).text(language).show();
+
+        $('#download').removeClass('bg-primary').removeClass('bg-warning').removeClass('bg-danger').addClass(cssClass).show();
+    };
+};
