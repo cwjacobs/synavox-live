@@ -1,7 +1,7 @@
 {
   "name": "database",
   "version": "1.0.0",
-  "description": "Database files for Synavox-Live application",
+  "description": "Database files for Synavox-Live Pharmacy application",
   "main": "initialize.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,13 +9,15 @@
   "keywords": [
     "nobleIQ",
     "Synavox",
-    "Synavox-Live"
+    "Synavox-Live",
+    "Synavox-Live-Pharmacy",
+    "Synavox-Live-Database"
   ],
   "author": "Craig Jacobs",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cwjacobs/synavox-live.git"
+    "url": "https://github.com/cwjacobs/synavox-live-pharmacy.git"
   },
   "dependencies": {
     "@firebase/app-types": "^0.2.0",
