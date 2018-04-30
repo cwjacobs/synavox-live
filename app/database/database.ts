@@ -2,8 +2,6 @@ import { Firestore_db } from "./firestore_db"
 import { Local_TestData } from "./local_TestData"
 import { MedicineDataModel } from "../models/medicineDataModel"
 
-import { PharmacistPanelViewFactory } from "../factories/pharmacistPanelViewFactory"
-
 export class Database {
 
     database: Firestore_db | Local_TestData;

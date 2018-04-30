@@ -1,12 +1,12 @@
 
 import { Database } from "../database/database"
-import { PharmacistPanelViewFactory } from "../factories/pharmacistPanelViewFactory"
+import { PanelViewFactory } from "../factories/panelViewFactory"
 
 interface KeyValuePair {
     [key: string]: string;
 }
 
-export class PharmcistDashboardController {
+export class DashboardController {
 
     static cssClassSelector: KeyValuePair = {
         ["English"]: "bg-primary",
@@ -17,11 +17,11 @@ export class PharmcistDashboardController {
     medicineName: string;
     database: Database = new Database();
 
-    async buildPharmacistDashboardAsync() {
+    async buildDashboardAsync() {
 
         let medicineCollection = await this.database.getMedicineCollectionAsync();
 
-        let medicinePanelViews: HTMLElement[] = new PharmacistPanelViewFactory().createPharmacistPanelViews_Model(medicineCollection);
+        let medicinePanelViews: HTMLElement[] = new PanelViewFactory().createPanelViews_Model(medicineCollection);
 
         medicinePanelViews.forEach(view => {
             $('#medicine-panel').append(view);
@@ -76,7 +76,7 @@ export class PharmcistDashboardController {
     };
 
     selectLanguage(language: string): void {
-        let cssClass: string = PharmcistDashboardController.cssClassSelector[language];
+        let cssClass: string = DashboardController.cssClassSelector[language];
 
         $('.selected-medicine-language').removeClass('bg-primary').removeClass('bg-warning').removeClass('bg-danger').addClass(cssClass).text(language).show();
 

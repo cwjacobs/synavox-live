@@ -2,12 +2,12 @@ import { Medicine } from "../medicine";
 import { MedicineCategory } from "../medicineCategory";
 import { MedicineDataModel } from "../models/medicineDataModel"
 
-export class PharmacistPanelViewFactory {
+export class PanelViewFactory {
 
     constructor() {
     }
 
-    public createPharmacistPanelViews_Json(json: string): HTMLElement[] {
+    public createPanelViews_Json(json: string): HTMLElement[] {
 
         let views: HTMLElement[] = new Array<HTMLElement>();
 
@@ -25,7 +25,7 @@ export class PharmacistPanelViewFactory {
         return views;
     }
 
-    public createPharmacistPanelViews_Model(medicineArray: Array<MedicineDataModel>): HTMLElement[] {
+    public createPanelViews_Model(medicineArray: Array<MedicineDataModel>): HTMLElement[] {
 
         let views: HTMLElement[] = new Array<HTMLElement>();
 
@@ -41,7 +41,7 @@ export class PharmacistPanelViewFactory {
         return views;
     }
 
-    public createPharmacistPanelView_Model(medicine: MedicineDataModel): HTMLElement {
+    public createPanelView_Model(medicine: MedicineDataModel): HTMLElement {
 
         let view: HTMLElement;
 
